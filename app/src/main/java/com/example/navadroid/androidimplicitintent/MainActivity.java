@@ -12,6 +12,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    static final int REQUEST_IMAGE_CAPTURE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,13 +39,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_intent_2:
-                // TODO: ???
+                intent.setAction(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:" + 191));
+                startActivity(intent);
                 break;
             case R.id.btn_intent_3:
                 // TODO: ???
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://wwww.facebook.com"));
+                startActivity(intent);
                 break;
             case R.id.btn_intent_4:
                 // TODO: ???
+                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivity(intent);
                 break;
             case R.id.btn_intent_5:
                 // TODO: ???
